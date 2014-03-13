@@ -7,7 +7,7 @@ var RSVP = require('rsvp')
 var Promise = RSVP.Promise
 var fs = { mkdir: RSVP.denodeify(require('fs').mkdir),
            stat: RSVP.denodeify(require('fs').stat) }
-var quickTemp = require('./index.js')
+var slickTemp = require('./index.js')
 var rimraf = RSVP.denodeify(require('rimraf'))
 
 describe('Unit tests:', function() {
@@ -24,7 +24,7 @@ describe('Unit tests:', function() {
       })
 
       .then(function() { // Call remove()
-        return quickTemp.remove(thing, 'coolDir')
+        return slickTemp.remove(thing, 'coolDir')
       })
 
       .then(function() { // Check if removing it worked
@@ -48,7 +48,7 @@ describe('Unit tests:', function() {
       })
 
       .then(function() { // Call makeOrReuse()
-        return quickTemp.makeOrReuse(thing, 'awesomeDir')
+        return slickTemp.makeOrReuse(thing, 'awesomeDir')
       })
 
       .then(function() { // Check if property is set and directory exists
@@ -69,7 +69,7 @@ describe('Unit tests:', function() {
       })
 
       .then(function() { // Call makeOrReuse()
-        return quickTemp.makeOrReuse(thing, 'awesomeDir')
+        return slickTemp.makeOrReuse(thing, 'awesomeDir')
       })
 
       .then(function() { // Check if property is set and directory exists
@@ -92,7 +92,7 @@ describe('Unit tests:', function() {
       })
 
       .then(function() { // Call makeOrRemake()
-        return quickTemp.makeOrRemake(thing, 'chilledDir')
+        return slickTemp.makeOrRemake(thing, 'chilledDir')
       })
 
       .then(function() { // Check if property is set and directory exists
@@ -113,7 +113,7 @@ describe('Unit tests:', function() {
       })
 
       .then(function() { // Call makeOrRemake()
-        return quickTemp.makeOrRemake(thing, 'chilledDir')
+        return slickTemp.makeOrRemake(thing, 'chilledDir')
       })
 
       .then(function() { // Check if property is set and directory exists
